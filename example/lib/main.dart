@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Skeleton Demo',
-      theme: ThemeData(primarySwatch: Colors.blue, dividerColor: Color(0xFFebebeb)),
+      theme: ThemeData(
+          primarySwatch: Colors.blue, dividerColor: Color(0xFFebebeb)),
       home: MyHomePage(),
     );
   }
@@ -35,7 +36,8 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text("List Skeleton", style: textStyle),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return ListSkeletonDemo();
                 }));
               },
@@ -44,7 +46,8 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text("Card Skeleton", style: textStyle),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return CardSkeletonDemo();
                 }));
               },
@@ -53,7 +56,8 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text("Card List Skeleton", style: textStyle),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return CardListSkeletonDemo();
                 }));
               },

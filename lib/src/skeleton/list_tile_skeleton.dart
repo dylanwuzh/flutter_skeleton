@@ -17,7 +17,8 @@ class ListTileSkeleton extends StatefulWidget {
   State<StatefulWidget> createState() => _ListTileSkeletonState();
 }
 
-class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerProviderStateMixin {
+class _ListTileSkeletonState extends State<ListTileSkeleton>
+    with SingleTickerProviderStateMixin {
   SkeletonAnimation _skeletonAnimation;
 
   @override
@@ -50,7 +51,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
         return Container(
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.all(Radius.circular(widget.config.radius)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(widget.config.radius)),
           ),
           padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 6),
           child: Column(
@@ -103,12 +105,14 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
             Container(
               height: height * 0.009,
               width: width * 0.3,
-              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+              decoration: SkeletonDecoration(_skeletonAnimation,
+                  theme: widget.config.theme),
             ),
             Container(
               height: height * 0.007,
               width: width * 0.2,
-              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+              decoration: SkeletonDecoration(_skeletonAnimation,
+                  theme: widget.config.theme),
             ),
           ],
         ),
@@ -118,7 +122,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       height: height * 0.012,
       width: width * 0.3,
       margin: EdgeInsets.only(top: 4.0),
-      decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+      decoration:
+          SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
     );
   }
 
@@ -135,10 +140,12 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       children.add(Container(
         height: height * 0.007,
         width: widths[i % widths.length],
-        decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+        decoration:
+            SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
       ));
       children.add(SizedBox(height: 10));
     }
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start, children: children);
   }
 }
