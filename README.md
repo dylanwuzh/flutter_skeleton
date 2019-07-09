@@ -7,6 +7,10 @@ Flutter skeleton screen.
 
 ![Example][1]
 
+![Example][2]
+
+![Example][3]
+
 ## Usage
 
 #### 1\. Depend
@@ -80,3 +84,5 @@ CardListSkeleton(
 ![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.0.1.png?raw=true)
 
 [1]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_1.jpg?raw=true
+[2]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_2.jpg?raw=true
+[3]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_3.jpg?raw=true

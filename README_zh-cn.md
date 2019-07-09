@@ -6,6 +6,10 @@ Flutter 骨架屏。
 
 ![示例][1]
 
+![示例][2]
+
+![示例][3]
+
 ## 用法
 
 #### 1\. 添加依赖
@@ -74,8 +78,10 @@ CardListSkeleton(
 
 [Example sources](https://github.com/wuzhendev/flutter_skeleton/tree/master/example)
 
-[Example APK](https://raw.githubusercontent.com/wuzhendev/assets/master/flutter-skeleton/flutter_skeleton_v0.0.1.apk)
+[Example APK](https://raw.githubusercontent.com/wuzhendev/assets/master/flutter_skeleton/flutter_skeleton_v0.0.1.apk)
 
-![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter-skeleton/flutter_skeleton_v0.0.1.png?raw=true)
+![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.0.1.png?raw=true)
 
-[1]:https://github.com/wuzhendev/assets/blob/master/flutter-skeleton/flutter_skeleton_1.jpg?raw=true
+[1]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_1.jpg?raw=true
+[2]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_2.jpg?raw=true
+[3]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_3.jpg?raw=true
