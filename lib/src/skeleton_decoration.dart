@@ -7,13 +7,13 @@ const List<Color> lightColors = [Color(0xfff6f7f9), Color(0xffe9ebee), Color(0xf
 const List<Color> darkColors = [Color(0xff616161), Color(0xff757575), Color(0xff616161)];
 
 class SkeletonDecoration extends BoxDecoration {
-  SkeletonDecoration(SkeletonAnimation animation, {theme = SkeletonTheme.Light, isCircle = false})
+  SkeletonDecoration(SkeletonAnimation animation, {theme: SkeletonTheme.Light, isCircle: false})
       : super(
           shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
           gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: theme == SkeletonTheme.Light ? lightColors : darkColors,
+            colors: theme != SkeletonTheme.Dark ? lightColors : darkColors,
             stops: [
               animation.animation.value - 1,
               animation.animation.value,

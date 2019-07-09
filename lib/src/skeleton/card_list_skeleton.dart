@@ -15,17 +15,16 @@ class CardListSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.only(top: 16.0),
-      child: ListView.builder(
-        itemCount: length,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-            child: CardSkeleton(config: config),
-          );
-        },
-      ),
+      itemCount: length,
+      itemBuilder: (BuildContext context, int index) {
+        return Container(
+          margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+          child: CardSkeleton(config: config),
+        );
+      },
     );
   }
 }

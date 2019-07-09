@@ -15,16 +15,14 @@ class ListSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: length,
+      separatorBuilder: (BuildContext context, int index) {
+        return Divider(color: Theme.of(context).dividerColor, height: 1.0);
+      },
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          decoration: BoxDecoration(
-            border: Border(
-                bottom: index == length - 1 ? BorderSide.none : BorderSide(color: Theme.of(context).dividerColor)),
-          ),
-          child: ListTileSkeleton(config: config),
-        );
+        return ListTileSkeleton(config: config);
       },
     );
   }

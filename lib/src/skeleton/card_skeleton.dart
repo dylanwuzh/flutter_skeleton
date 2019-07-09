@@ -16,6 +16,7 @@ class CardSkeleton extends StatelessWidget {
     return Card(
       elevation: 0,
       margin: EdgeInsets.zero,
+      color: Colors.transparent,
       child: ListTileSkeleton(config: config),
     );
   }
