@@ -81,7 +81,7 @@ CardListSkeleton(
 
 [Example APK](https://raw.githubusercontent.com/wuzhendev/assets/master/flutter_skeleton/flutter_skeleton_v0.0.1.apk)
 
-![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.0.1.png?raw=true)
+![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.0.1.jpg?raw=true)
 
 [1]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_1.jpg?raw=true
 [2]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_2.jpg?raw=true
