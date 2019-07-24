@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
 import '../skeleton_animation.dart';
-import '../skeleton_config.dart';
+import '../skeleton_style.dart';
 import '../skeleton_decoration.dart';
 import '../skeleton_theme.dart';
 
 class ListTileSkeleton extends StatefulWidget {
-  final SkeletonConfig config;
+  final SkeletonStyle style;
 
   ListTileSkeleton({
     Key key,
-    this.config: const SkeletonConfig.origin(),
+    this.style: const SkeletonStyle.origin(),
   }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _ListTileSkeletonState();
 }
 
-class _ListTileSkeletonState extends State<ListTileSkeleton>
-    with SingleTickerProviderStateMixin {
+class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerProviderStateMixin {
   SkeletonAnimation _skeletonAnimation;
 
   @override
@@ -34,7 +33,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   }
 
   Color get backgroundColor {
-    if (widget.config.theme == SkeletonTheme.Dark) {
+    if (widget.style.theme == SkeletonTheme.Dark) {
       return Color(0xff424242);
     }
     return Colors.white;
@@ -44,15 +43,14 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    debugPrint('listtile radius: ${widget.config.radius}');
+    debugPrint('listtile radius: ${widget.style.radius}');
     return AnimatedBuilder(
       animation: _skeletonAnimation.animation,
       builder: (context, child) {
         return Container(
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius:
-                BorderRadius.all(Radius.circular(widget.config.radius)),
+            borderRadius: BorderRadius.all(Radius.circular(widget.style.radius)),
           ),
           padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 6),
           child: Column(
@@ -76,7 +74,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   }
 
   Widget _renderAvatarView(width, height) {
-    return widget.config.isShowAvatar
+    return widget.style.isShowAvatar
         ? Row(
             children: <Widget>[
               Container(
@@ -84,8 +82,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
                 width: width * 0.13,
                 decoration: SkeletonDecoration(
                   _skeletonAnimation,
-                  theme: widget.config.theme,
-                  isCircle: widget.config.isCircleAvatar,
+                  theme: widget.style.theme,
+                  isCircle: widget.style.isCircleAvatar,
                 ),
               ),
               SizedBox(width: 20),
@@ -95,7 +93,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   }
 
   Widget _renderTitleView(width, height) {
-    if (widget.config.isShowAvatar) {
+    if (widget.style.isShowAvatar) {
       return Container(
         height: width * 0.13,
         child: Column(
@@ -105,14 +103,12 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
             Container(
               height: height * 0.009,
               width: width * 0.3,
-              decoration: SkeletonDecoration(_skeletonAnimation,
-                  theme: widget.config.theme),
+              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
             ),
             Container(
               height: height * 0.007,
               width: width * 0.2,
-              decoration: SkeletonDecoration(_skeletonAnimation,
-                  theme: widget.config.theme),
+              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
             ),
           ],
         ),
@@ -122,13 +118,12 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
       height: height * 0.012,
       width: width * 0.3,
       margin: EdgeInsets.only(top: 4.0),
-      decoration:
-          SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+      decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
     );
   }
 
   Widget _renderBottomLines(width, height) {
-    final int count = widget.config.bottomLinesCount;
+    final int count = widget.style.bottomLinesCount;
     if (count <= 0) {
       return SizedBox(height: 10.0);
     }
@@ -140,12 +135,10 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
       children.add(Container(
         height: height * 0.007,
         width: widths[i % widths.length],
-        decoration:
-            SkeletonDecoration(_skeletonAnimation, theme: widget.config.theme),
+        decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
       ));
       children.add(SizedBox(height: 10));
     }
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start, children: children);
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
   }
 }

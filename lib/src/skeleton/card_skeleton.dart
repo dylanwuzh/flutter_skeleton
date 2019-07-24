@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../skeleton_config.dart';
+import '../skeleton_style.dart';
 import './list_tile_skeleton.dart';
 
 class CardSkeleton extends StatelessWidget {
-  final SkeletonConfig config;
+  final SkeletonStyle style;
 
   CardSkeleton({
     Key key,
-    this.config: const SkeletonConfig.origin(),
+    this.style: const SkeletonStyle.origin(),
   }) : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class CardSkeleton extends StatelessWidget {
       elevation: 0,
       margin: EdgeInsets.zero,
       color: Colors.transparent,
-      child: ListTileSkeleton(config: config),
+      child: ListTileSkeleton(style: style),
     );
   }
 }

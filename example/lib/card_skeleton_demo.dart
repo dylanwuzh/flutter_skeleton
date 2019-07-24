@@ -16,7 +16,7 @@ class _CardSkeletonDemoState extends State<CardSkeletonDemo> {
       body: Container(
         padding: EdgeInsets.all(16.0),
         child: CardSkeleton(
-          config: SkeletonConfig(
+          style: SkeletonStyle(
             theme: SkeletonTheme.Light,
             isShowAvatar: true,
             isCircleAvatar: false,

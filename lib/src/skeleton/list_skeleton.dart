@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../skeleton_config.dart';
+import '../skeleton_style.dart';
 import './list_tile_skeleton.dart';
 
 class ListSkeleton extends StatelessWidget {
-  final SkeletonConfig config;
+  final SkeletonStyle style;
   final int length;
 
   ListSkeleton({
     Key key,
-    this.config: const SkeletonConfig.origin(),
+    this.style: const SkeletonStyle.origin(),
     this.length: 10,
   }) : super(key: key);
 
@@ -22,7 +22,7 @@ class ListSkeleton extends StatelessWidget {
         return Divider(color: Theme.of(context).dividerColor, height: 1.0);
       },
       itemBuilder: (BuildContext context, int index) {
-        return ListTileSkeleton(config: config);
+        return ListTileSkeleton(style: style);
       },
     );
   }

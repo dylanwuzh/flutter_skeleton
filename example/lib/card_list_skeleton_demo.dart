@@ -15,7 +15,7 @@ class _CardListSkeletonDemoState extends State<CardListSkeletonDemo> {
       appBar: AppBar(title: Text("Card List Skeleton Demo")),
       body: Container(
         child: CardListSkeleton(
-          config: SkeletonConfig(
+          style: SkeletonStyle(
             theme: SkeletonTheme.Dark,
             isShowAvatar: true,
             isCircleAvatar: true,
