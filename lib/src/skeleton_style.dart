@@ -8,6 +8,7 @@ class SkeletonStyle {
   final bool isCircleAvatar;
   final int bottomLinesCount;
   final BorderRadius borderRadius;
+  final EdgeInsetsGeometry padding;
 
   SkeletonStyle({
     this.theme: SkeletonTheme.Light,
@@ -15,6 +16,7 @@ class SkeletonStyle {
     this.isCircleAvatar: true,
     this.bottomLinesCount: 2,
     this.borderRadius: BorderRadius.zero,
+    this.padding,
   });
 
   const SkeletonStyle.origin()
@@ -22,5 +24,6 @@ class SkeletonStyle {
         isShowAvatar = true,
         isCircleAvatar = true,
         bottomLinesCount = 2,
-        borderRadius = BorderRadius.zero;
+        borderRadius = BorderRadius.zero,
+        padding = const EdgeInsets.all(16.0);
 }

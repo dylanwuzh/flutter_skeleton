@@ -32,11 +32,18 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
     super.dispose();
   }
 
-  Color get backgroundColor {
+  Color get _backgroundColor {
     if (widget.style.theme == SkeletonTheme.Dark) {
       return Color(0xff424242);
     }
     return Colors.white;
+  }
+
+  EdgeInsetsGeometry get _padding {
+    if (widget.style.padding != null) {
+      return widget.style.padding;
+    }
+    return EdgeInsets.all(16.0);
   }
 
   @override
@@ -48,10 +55,10 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       builder: (context, child) {
         return Container(
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: _backgroundColor,
             borderRadius: widget.style.borderRadius,
           ),
-          padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 6),
+          padding: _padding,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -124,7 +131,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   Widget _renderBottomLines(width, height) {
     final int count = widget.style.bottomLinesCount;
     if (count <= 0) {
-      return SizedBox(height: 10.0);
+      return Offstage();
     }
 
     List<double> widths = [width * 0.7, width * 0.8, width * 0.5];
@@ -136,7 +143,10 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
         width: widths[i % widths.length],
         decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
       ));
-      children.add(SizedBox(height: 10));
+      // last one has no bottom divider
+      if (i < count - 1) {
+        children.add(SizedBox(height: 10));
+      }
     }
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
   }
