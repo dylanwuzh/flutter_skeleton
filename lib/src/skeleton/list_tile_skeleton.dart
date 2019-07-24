@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../skeleton_animation.dart';
+import '../skeleton_constant.dart';
 import '../skeleton_style.dart';
 import '../skeleton_decoration.dart';
 import '../skeleton_theme.dart';
@@ -37,9 +38,9 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       return widget.style.backgroundColor;
     }
     if (widget.style.theme == SkeletonTheme.Dark) {
-      return Color(0xff424242);
+      return darkBackgroundColor;
     }
-    return Colors.white;
+    return lightBackgroundColor;
   }
 
   EdgeInsetsGeometry get _padding {
