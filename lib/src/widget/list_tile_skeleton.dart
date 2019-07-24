@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dart:math';
+
 import '../skeleton_constant.dart';
 import '../skeleton_style.dart';
 import '../skeleton_theme.dart';
@@ -82,8 +84,16 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   }
 
   _SkeletonDecoration _createSkeletonDecoration(bool isCircle) {
-    var colors = widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
-
+    List<Color> colors = [];
+    if (widget.style.color != null) {
+      HSVColor hsvColor = HSVColor.fromColor(widget.style.color);
+      var value = hsvColor.value * 1.1;
+      value = value > 1.0 ? hsvColor.value * 0.9 : value;
+      var color = hsvColor.withValue(value).toColor();
+      colors = [color, widget.style.color, color];
+    } else {
+      colors = widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
+    }
     return _SkeletonDecoration(
       animation: _skeletonAnimation,
       isCircle: isCircle,

@@ -8,7 +8,7 @@ class _SkeletonDecoration extends BoxDecoration {
     isCircle: false,
   }) : super(
             shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
-            color: isAnim ? null : colors[0],
+            color: isAnim ? null : colors[1],
             gradient: isAnim
                 ? LinearGradient(
                     begin: Alignment.centerLeft,
