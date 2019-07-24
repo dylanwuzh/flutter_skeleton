@@ -23,6 +23,7 @@ class _CardSkeletonDemoState extends State<CardSkeletonDemo> {
             borderRadius: BorderRadius.all(Radius.circular(16.0)),
 //            padding: EdgeInsets.all(32.0),
             bottomLinesCount: 2,
+            backgroundColor: Color(0xFF009000),
           ),
         ),
       ),

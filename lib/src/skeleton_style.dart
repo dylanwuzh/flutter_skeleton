@@ -9,6 +9,7 @@ class SkeletonStyle {
   final int bottomLinesCount;
   final BorderRadius borderRadius;
   final EdgeInsetsGeometry padding;
+  final Color backgroundColor;
 
   SkeletonStyle({
     this.theme: SkeletonTheme.Light,
@@ -17,6 +18,7 @@ class SkeletonStyle {
     this.bottomLinesCount: 2,
     this.borderRadius: BorderRadius.zero,
     this.padding,
+    this.backgroundColor,
   });
 
   const SkeletonStyle.origin()
@@ -25,5 +27,6 @@ class SkeletonStyle {
         isCircleAvatar = true,
         bottomLinesCount = 2,
         borderRadius = BorderRadius.zero,
-        padding = const EdgeInsets.all(16.0);
+        padding = const EdgeInsets.all(16.0),
+        backgroundColor = null;
 }

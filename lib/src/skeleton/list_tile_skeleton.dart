@@ -33,6 +33,9 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   }
 
   Color get _backgroundColor {
+    if (widget.style.backgroundColor != null) {
+      return widget.style.backgroundColor;
+    }
     if (widget.style.theme == SkeletonTheme.Dark) {
       return Color(0xff424242);
     }
@@ -54,10 +57,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       animation: _skeletonAnimation.animation,
       builder: (context, child) {
         return Container(
-          decoration: BoxDecoration(
-            color: _backgroundColor,
-            borderRadius: widget.style.borderRadius,
-          ),
+          decoration: BoxDecoration(color: _backgroundColor, borderRadius: widget.style.borderRadius),
           padding: _padding,
           child: Column(
             mainAxisSize: MainAxisSize.min,
