@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../skeleton_animation.dart';
 import '../skeleton_constant.dart';
 import '../skeleton_style.dart';
-import '../skeleton_decoration.dart';
 import '../skeleton_theme.dart';
+
+part 'skeleton_animation.dart';
+part 'skeleton_decoration.dart';
 
 class ListTileSkeleton extends StatefulWidget {
   final SkeletonStyle style;
@@ -19,12 +20,12 @@ class ListTileSkeleton extends StatefulWidget {
 }
 
 class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerProviderStateMixin {
-  SkeletonAnimation _skeletonAnimation;
+  _SkeletonAnimation _skeletonAnimation;
 
   @override
   void initState() {
     super.initState();
-    _skeletonAnimation = SkeletonAnimation(this);
+    _skeletonAnimation = _SkeletonAnimation(this);
   }
 
   @override
@@ -80,6 +81,17 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
     );
   }
 
+  _SkeletonDecoration _createSkeletonDecoration(bool isCircle) {
+    var colors = widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
+
+    return _SkeletonDecoration(
+      animation: _skeletonAnimation,
+      isCircle: isCircle,
+      isAnim: true,
+      colors: colors,
+    );
+  }
+
   Widget _renderAvatarView(width, height) {
     return widget.style.isShowAvatar
         ? Row(
@@ -87,11 +99,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
               Container(
                 height: width * 0.13,
                 width: width * 0.13,
-                decoration: SkeletonDecoration(
-                  _skeletonAnimation,
-                  theme: widget.style.theme,
-                  isCircle: widget.style.isCircleAvatar,
-                ),
+                decoration: _createSkeletonDecoration(widget.style.isCircleAvatar),
               ),
               SizedBox(width: 20),
             ],
@@ -110,12 +118,12 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
             Container(
               height: height * 0.009,
               width: width * 0.3,
-              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
+              decoration: _createSkeletonDecoration(false),
             ),
             Container(
               height: height * 0.007,
               width: width * 0.2,
-              decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
+              decoration: _createSkeletonDecoration(false),
             ),
           ],
         ),
@@ -125,7 +133,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       height: height * 0.012,
       width: width * 0.3,
       margin: EdgeInsets.only(top: 4.0),
-      decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
+      decoration: _createSkeletonDecoration(false),
     );
   }
 
@@ -142,7 +150,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
       children.add(Container(
         height: height * 0.007,
         width: widths[i % widths.length],
-        decoration: SkeletonDecoration(_skeletonAnimation, theme: widget.style.theme),
+        decoration: _createSkeletonDecoration(false),
       ));
       // last one has no bottom divider
       if (i < count - 1) {
