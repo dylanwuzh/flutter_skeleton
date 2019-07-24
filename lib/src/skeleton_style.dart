@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import './skeleton_theme.dart';
 
 class SkeletonStyle {
@@ -5,14 +7,14 @@ class SkeletonStyle {
   final bool isShowAvatar;
   final bool isCircleAvatar;
   final int bottomLinesCount;
-  final double radius;
+  final BorderRadius borderRadius;
 
   SkeletonStyle({
     this.theme: SkeletonTheme.Light,
     this.isShowAvatar: true,
     this.isCircleAvatar: true,
     this.bottomLinesCount: 2,
-    this.radius: 0.0,
+    this.borderRadius: BorderRadius.zero,
   });
 
   const SkeletonStyle.origin()
@@ -20,5 +22,5 @@ class SkeletonStyle {
         isShowAvatar = true,
         isCircleAvatar = true,
         bottomLinesCount = 2,
-        radius = 0.0;
+        borderRadius = BorderRadius.zero;
 }

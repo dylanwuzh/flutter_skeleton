@@ -20,7 +20,7 @@ class _CardSkeletonDemoState extends State<CardSkeletonDemo> {
             theme: SkeletonTheme.Light,
             isShowAvatar: true,
             isCircleAvatar: false,
-            radius: 16.0,
+            borderRadius: BorderRadius.all(Radius.circular(16.0)),
           ),
         ),
       ),

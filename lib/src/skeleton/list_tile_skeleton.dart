@@ -43,14 +43,13 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    debugPrint('listtile radius: ${widget.style.radius}');
     return AnimatedBuilder(
       animation: _skeletonAnimation.animation,
       builder: (context, child) {
         return Container(
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: BorderRadius.all(Radius.circular(widget.style.radius)),
+            borderRadius: widget.style.borderRadius,
           ),
           padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 6),
           child: Column(
