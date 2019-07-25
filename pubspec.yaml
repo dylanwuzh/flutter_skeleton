@@ -1,6 +1,6 @@
 name: flutter_skeleton
 description: Flutter skeleton screen for Android and iOS. Support List, Card and Card-List style. Support light and dark theme.
-version: 0.0.1
+version: 0.1.0+1
 author: Dylan Wu <dylanwuzh@gmail.com>
 homepage: https://github.com/wuzhendev/flutter_skeleton
 

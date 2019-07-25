@@ -19,7 +19,8 @@ class ListTileSkeleton extends StatefulWidget {
   State<StatefulWidget> createState() => _ListTileSkeletonState();
 }
 
-class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerProviderStateMixin {
+class _ListTileSkeletonState extends State<ListTileSkeleton>
+    with SingleTickerProviderStateMixin {
   _SkeletonAnimation _skeletonAnimation;
 
   @override
@@ -60,7 +61,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
     if (widget.style.colors != null && widget.style.colors.length > 0) {
       colors = widget.style.colors;
     } else {
-      colors = widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
+      colors =
+          widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
     }
 
     return _SkeletonDecoration(
@@ -87,7 +89,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Container(
-      decoration: BoxDecoration(color: _backgroundColor, borderRadius: widget.style.borderRadius),
+      decoration: BoxDecoration(
+          color: _backgroundColor, borderRadius: widget.style.borderRadius),
       padding: _padding,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -114,7 +117,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
               Container(
                 height: width * 0.13,
                 width: width * 0.13,
-                decoration: _createSkeletonDecoration(widget.style.isCircleAvatar),
+                decoration:
+                    _createSkeletonDecoration(widget.style.isCircleAvatar),
               ),
               SizedBox(width: 20),
             ],
@@ -172,6 +176,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
         children.add(SizedBox(height: 10));
       }
     }
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start, children: children);
   }
 }

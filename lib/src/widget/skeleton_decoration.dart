@@ -14,7 +14,11 @@ class _SkeletonDecoration extends BoxDecoration {
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                     colors: colors,
-                    stops: [animation.animation.value - 1, animation.animation.value, animation.animation.value + 1],
+                    stops: [
+                      animation.animation.value - 1,
+                      animation.animation.value,
+                      animation.animation.value + 1
+                    ],
                   )
                 : null);
 }

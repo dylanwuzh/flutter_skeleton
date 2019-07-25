@@ -5,7 +5,8 @@ class _SkeletonAnimation {
   Animation<double> animation;
 
   _SkeletonAnimation(TickerProvider provider) {
-    _controller = AnimationController(vsync: provider, duration: Duration(seconds: 1));
+    _controller =
+        AnimationController(vsync: provider, duration: Duration(seconds: 1));
 
     animation = Tween<double>(begin: -1.0, end: 2.0).animate(CurvedAnimation(
       curve: Curves.easeInOutSine,
@@ -13,7 +14,8 @@ class _SkeletonAnimation {
     ));
 
     animation.addStatusListener((status) {
-      if (status == AnimationStatus.completed || status == AnimationStatus.dismissed) {
+      if (status == AnimationStatus.completed ||
+          status == AnimationStatus.dismissed) {
         _controller.repeat();
       } else if (status == AnimationStatus.dismissed) {
         _controller.forward();

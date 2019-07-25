@@ -45,13 +45,18 @@ class _ListSkeletonDemoState extends State<ListSkeletonDemo> {
     showDialog(
         context: context,
         builder: (BuildContext context) {
-          return StatefulBuilder(builder: (BuildContext context, StateSetter setStateDialog) {
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter setStateDialog) {
             return AlertDialog(
               titlePadding: EdgeInsets.only(left: 16.0, top: 16.0),
               title: Text("SkeletonConfig"),
               contentPadding: EdgeInsets.all(16.0),
               content: _renderConfigViews(context, setStateDialog),
-              actions: <Widget>[FlatButton(child: Text("OK"), onPressed: () => Navigator.of(context).pop())],
+              actions: <Widget>[
+                FlatButton(
+                    child: Text("OK"),
+                    onPressed: () => Navigator.of(context).pop())
+              ],
             );
           });
         });
