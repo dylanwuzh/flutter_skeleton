@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'dart:math';
-
 import '../skeleton_constant.dart';
 import '../skeleton_style.dart';
 import '../skeleton_theme.dart';
@@ -27,12 +25,16 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   @override
   void initState() {
     super.initState();
-    _skeletonAnimation = _SkeletonAnimation(this);
+    if (widget.style.isAnimation) {
+      _skeletonAnimation = _SkeletonAnimation(this);
+    }
   }
 
   @override
   void dispose() {
-    _skeletonAnimation.dispose();
+    if (widget.style.isAnimation) {
+      _skeletonAnimation.dispose();
+    }
     super.dispose();
   }
 
@@ -53,52 +55,55 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
     return EdgeInsets.all(16.0);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
-    return AnimatedBuilder(
-      animation: _skeletonAnimation.animation,
-      builder: (context, child) {
-        return Container(
-          decoration: BoxDecoration(color: _backgroundColor, borderRadius: widget.style.borderRadius),
-          padding: _padding,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  _renderAvatarView(width, height),
-                  _renderTitleView(width, height),
-                ],
-              ),
-              _renderBottomLines(width, height),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
   _SkeletonDecoration _createSkeletonDecoration(bool isCircle) {
     List<Color> colors = [];
-    if (widget.style.color != null) {
-      HSVColor hsvColor = HSVColor.fromColor(widget.style.color);
-      var value = hsvColor.value * 1.1;
-      value = value > 1.0 ? hsvColor.value * 0.9 : value;
-      var color = hsvColor.withValue(value).toColor();
-      colors = [color, widget.style.color, color];
+    if (widget.style.colors != null && widget.style.colors.length > 0) {
+      colors = widget.style.colors;
     } else {
       colors = widget.style.theme != SkeletonTheme.Dark ? lightColors : darkColors;
     }
+
     return _SkeletonDecoration(
       animation: _skeletonAnimation,
       isCircle: isCircle,
-      isAnim: true,
+      isAnimation: widget.style.isAnimation,
       colors: colors,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return widget.style.isAnimation
+        ? AnimatedBuilder(
+            animation: _skeletonAnimation.animation,
+            builder: (context, child) {
+              return _renderContainer();
+            },
+          )
+        : _renderContainer();
+  }
+
+  Widget _renderContainer() {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    return Container(
+      decoration: BoxDecoration(color: _backgroundColor, borderRadius: widget.style.borderRadius),
+      padding: _padding,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              _renderAvatarView(width, height),
+              _renderTitleView(width, height),
+            ],
+          ),
+          _renderBottomLines(width, height),
+        ],
+      ),
     );
   }
 
@@ -148,7 +153,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton> with SingleTickerPr
   }
 
   Widget _renderBottomLines(width, height) {
-    final int count = widget.style.bottomLinesCount;
+    final int count = widget.style.barCount;
     if (count <= 0) {
       return Offstage();
     }

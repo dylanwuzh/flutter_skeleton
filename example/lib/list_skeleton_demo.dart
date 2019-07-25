@@ -27,7 +27,9 @@ class _ListSkeletonDemoState extends State<ListSkeletonDemo> {
         style: SkeletonStyle(
           theme: _theme,
           isShowAvatar: _isShowAvatar,
-          bottomLinesCount: 3,
+          barCount: 3,
+          colors: [Color(0xff333333), Color(0xffffff45), Color(0xff333333)],
+          isAnimation: true,
         ),
       ),
     );

@@ -19,7 +19,7 @@ class _CardListSkeletonDemoState extends State<CardListSkeletonDemo> {
             theme: SkeletonTheme.Dark,
             isShowAvatar: true,
             isCircleAvatar: true,
-            bottomLinesCount: 2,
+            barCount: 2,
           ),
         ),
       ),
