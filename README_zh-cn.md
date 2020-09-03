@@ -79,17 +79,18 @@ CardListSkeleton(
 
 ## SkeletonStyle 参数
 
-| 名称             | 类型          | 描述             | 默认值                  |
-|:----------------|:--------------|:----------------|:-----------------------|
-| isAnimation     | bool          | 是否显示动画      | true                   |
-| isShowAvatar    | bool          | 是否显示头像      | true                   |
-| isCircleAvatar  | bool          | 头像是否显示成圆形 | true                   |
-| barCount        | int           | 横条的数量        | 2                      |
-| borderRadius    | BorderRadius  | 圆角值           | 0                      |
-| padding         | EdgeInsets    | padding         | 16                     |
-| colors          | List<Color>   | 横条的渐变        | null, 根据Theme获取默认值 |
-| backgroundColor | Color         | 背景色           | null, 根据Theme获取默认值 |
-| theme           | SkeletonTheme | 预置的Theme      | SkeletonTheme.Light     |
+| 名称            | 类型          | 描述                  | 默认值                      |
+| :-------------- | :------------ | :-------------------- | :-------------------------- |
+| isAnimation     | bool          | 是否显示动画          | true                        |
+| isShowAvatar    | bool          | 是否显示头像          | true                        |
+| isCircleAvatar  | bool          | 头像是否显示成圆形    | true                        |
+| barCount        | int           | 横条的数量            | 2                           |
+| borderRadius    | BorderRadius  | 圆角值                | 0                           |
+| padding         | EdgeInsets    | padding               | 16                          |
+| colors          | List<Color>   | 横条的渐变            | null, 根据 Theme 获取默认值 |
+| backgroundColor | Color         | 背景色                | null, 根据 Theme 获取默认值 |
+| theme           | SkeletonTheme | 预置的 Theme          | SkeletonTheme.Light         |
+| shrinkWrap      | bool          | 控制列表的 shrinkWrap | false                       |
 
 ## Example
 
@@ -99,6 +100,6 @@ CardListSkeleton(
 
 ![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.1.0.jpg?raw=true)
 
-[1]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_4.jpg?raw=true
-[2]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_5.jpg?raw=true
-[3]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_6.jpg?raw=true
+[1]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_4.jpg?raw=true
+[2]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_5.jpg?raw=true
+[3]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_6.jpg?raw=true

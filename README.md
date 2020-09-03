@@ -81,7 +81,7 @@ CardListSkeleton(
 ## SkeletonStyle Properties
 
 | Name            | Type          | Meaning                        | Default                  |
-|:----------------|:--------------|:-------------------------------|:-------------------------|
+| :-------------- | :------------ | :----------------------------- | :----------------------- |
 | isAnimation     | bool          | if show animation or not       | true                     |
 | isShowAvatar    | bool          | if show avatar or not          | true                     |
 | isCircleAvatar  | bool          | if the avatar is circle or not | true                     |
@@ -91,6 +91,7 @@ CardListSkeleton(
 | colors          | List<Color>   | gradient color of bar          | null, specified by theme |
 | backgroundColor | Color         | background color of container  | null, specified by theme |
 | theme           | SkeletonTheme | pre-install theme              | SkeletonTheme.Light      |
+| shrinkWrap      | bool          | control shrinkWrap of the list | false                    |
 
 ## Example
 
@@ -100,6 +101,6 @@ CardListSkeleton(
 
 ![Example APK Download](https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_v0.1.0.jpg?raw=true)
 
-[1]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_4.jpg?raw=true
-[2]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_5.jpg?raw=true
-[3]:https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_6.jpg?raw=true
+[1]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_4.jpg?raw=true
+[2]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_5.jpg?raw=true
+[3]: https://github.com/wuzhendev/assets/blob/master/flutter_skeleton/flutter_skeleton_6.jpg?raw=true

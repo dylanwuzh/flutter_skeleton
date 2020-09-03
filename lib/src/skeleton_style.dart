@@ -12,6 +12,7 @@ class SkeletonStyle {
   final List<Color> colors;
   final Color backgroundColor;
   final SkeletonTheme theme;
+  final bool shrinkWrap;
 
   SkeletonStyle({
     this.isAnimation: true,
@@ -23,6 +24,7 @@ class SkeletonStyle {
     this.colors,
     this.backgroundColor,
     this.theme: SkeletonTheme.Light,
+    this.shrinkWrap,
   });
 
   const SkeletonStyle.origin()
@@ -34,5 +36,6 @@ class SkeletonStyle {
         padding = const EdgeInsets.all(16.0),
         colors = null,
         backgroundColor = null,
-        theme = SkeletonTheme.Light;
+        theme = SkeletonTheme.Light,
+        shrinkWrap = false;
 }

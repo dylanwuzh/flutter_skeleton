@@ -1,6 +1,6 @@
 name: flutter_skeleton_example
 description: Demonstrates how to use the flutter_skeleton plugin.
-publish_to: 'none'
+publish_to: "none"
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -9,8 +9,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_skeleton:
-    path: ../
+  # flutter_skeleton:
+  #   path: ../
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -28,7 +28,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
