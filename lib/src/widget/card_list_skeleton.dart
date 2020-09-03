@@ -16,6 +16,7 @@ class CardListSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: style.shrinkWrap,
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.only(top: 16.0),
       itemCount: length,

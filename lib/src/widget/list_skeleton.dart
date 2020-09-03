@@ -16,6 +16,7 @@ class ListSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: style.shrinkWrap,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: length,
       separatorBuilder: (BuildContext context, int index) {
