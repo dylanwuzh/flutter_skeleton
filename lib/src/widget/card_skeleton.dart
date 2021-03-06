@@ -7,7 +7,7 @@ class CardSkeleton extends StatelessWidget {
   final SkeletonStyle style;
 
   CardSkeleton({
-    Key key,
+    Key? key,
     this.style: const SkeletonStyle.origin(),
   }) : super(key: key);
 

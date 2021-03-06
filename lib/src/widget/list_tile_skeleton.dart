@@ -11,7 +11,7 @@ class ListTileSkeleton extends StatefulWidget {
   final SkeletonStyle style;
 
   ListTileSkeleton({
-    Key key,
+    Key? key,
     this.style: const SkeletonStyle.origin(),
   }) : super(key: key);
 
@@ -21,7 +21,7 @@ class ListTileSkeleton extends StatefulWidget {
 
 class _ListTileSkeletonState extends State<ListTileSkeleton>
     with SingleTickerProviderStateMixin {
-  _SkeletonAnimation _skeletonAnimation;
+  _SkeletonAnimation? _skeletonAnimation;
 
   @override
   void initState() {
@@ -34,12 +34,12 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   @override
   void dispose() {
     if (widget.style.isAnimation) {
-      _skeletonAnimation.dispose();
+      _skeletonAnimation!.dispose();
     }
     super.dispose();
   }
 
-  Color get _backgroundColor {
+  Color? get _backgroundColor {
     if (widget.style.backgroundColor != null) {
       return widget.style.backgroundColor;
     }
@@ -49,7 +49,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
     return lightBackgroundColor;
   }
 
-  EdgeInsetsGeometry get _padding {
+  EdgeInsetsGeometry? get _padding {
     if (widget.style.padding != null) {
       return widget.style.padding;
     }
@@ -57,8 +57,8 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   }
 
   _SkeletonDecoration _createSkeletonDecoration(bool isCircle) {
-    List<Color> colors = [];
-    if (widget.style.colors != null && widget.style.colors.length > 0) {
+    List<Color>? colors = [];
+    if (widget.style.colors != null && widget.style.colors!.length > 0) {
       colors = widget.style.colors;
     } else {
       colors =
@@ -69,7 +69,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
       animation: _skeletonAnimation,
       isCircle: isCircle,
       isAnimation: widget.style.isAnimation,
-      colors: colors,
+      colors: colors!,
     );
   }
 
@@ -77,7 +77,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
   Widget build(BuildContext context) {
     return widget.style.isAnimation
         ? AnimatedBuilder(
-            animation: _skeletonAnimation.animation,
+            animation: _skeletonAnimation!.animation,
             builder: (context, child) {
               return _renderContainer();
             },
@@ -162,7 +162,7 @@ class _ListTileSkeletonState extends State<ListTileSkeleton>
       return Offstage();
     }
 
-    List<double> widths = [width * 0.7, width * 0.8, width * 0.5];
+    List<double?> widths = [width * 0.7, width * 0.8, width * 0.5];
     List<Widget> children = [];
     children.add(SizedBox(height: 20.0));
     for (int i = 0; i < count; i++) {

@@ -1,8 +1,8 @@
 part of 'list_tile_skeleton.dart';
 
 class _SkeletonAnimation {
-  AnimationController _controller;
-  Animation<double> animation;
+  late AnimationController _controller;
+  late Animation<double> animation;
 
   _SkeletonAnimation(TickerProvider provider) {
     _controller =
