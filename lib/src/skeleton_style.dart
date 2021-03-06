@@ -8,9 +8,9 @@ class SkeletonStyle {
   final bool isCircleAvatar;
   final int barCount;
   final BorderRadius borderRadius;
-  final EdgeInsetsGeometry padding;
-  final List<Color> colors;
-  final Color backgroundColor;
+  final EdgeInsetsGeometry? padding;
+  final List<Color>? colors;
+  final Color? backgroundColor;
   final SkeletonTheme theme;
 
   SkeletonStyle({
